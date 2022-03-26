@@ -178,7 +178,7 @@ function writeToFile(fileName, data) {
 function init() {
     promptQuestions()
     .then(data => {
-        writeToFile("NEWREADME.md", generateMarkdown(data));
+        writeToFile("./dist/NEWREADME.md", generateMarkdown(data));
     })
     .catch(err => {
         console.log(err);
