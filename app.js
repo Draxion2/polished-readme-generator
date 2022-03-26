@@ -95,8 +95,16 @@ const promptQuestions = () => {
         {
             type: "checkbox",
             name: "languages",
-            message: "What did you use to build this project? (Check all that apply)",
-            choices: ["HTML", "CSS", "JavaScript", "JQuery", "Bootstrap", "ES6", "Node.js"]
+            message: "What did you use to build this project? (Check all that apply; Required)",
+            choices: ["HTML", "CSS", "JavaScript", "JQuery", "Bootstrap", "ES6", "Node.js"],
+            validate: languageInput => {
+                if (languageInput) {
+                    return true;
+                } else {
+                    console.log("Please provide at least one selection!");
+                    return false;
+                }
+            }
         },
 
         // confirm screenshot
@@ -111,7 +119,7 @@ const promptQuestions = () => {
         {
             type: "link",
             name: "screenshot",
-            message: "Please provide a screenshot showing your project",
+            message: "Please provide a link to a screenshot showing your project",
             when: ({confirmScreenshot}) => {
                 if (confirmScreenshot) {
                     return true;
@@ -142,12 +150,12 @@ const promptQuestions = () => {
         {
             type: "input",
             name: "contributions",
-            message: "Please provide any contributions (Required)",
+            message: "Please provide any contributions/credits (Required)",
             validate: contInput => {
                 if (contInput) {
                     return true;
                 } else {
-                    console.log("Please provide any contributions your project has, if any. If there is none please input 'None'");
+                    console.log("Please provide any contributions your project has, if any. If there is none please reply 'None'");
                     return false;
                 }
             }
@@ -160,6 +168,8 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, err => {
         if (err) {
             return console.log(err);
+        } else {
+            console.log("Success! README genereated!");
         }
     })
 }
@@ -168,8 +178,7 @@ function writeToFile(fileName, data) {
 function init() {
     promptQuestions()
     .then(data => {
-        console.log(data);
-        writeToFile("DEMOREADME.md", generateMarkdown(data));
+        writeToFile("NEWREADME.md", generateMarkdown(data));
     })
     .catch(err => {
         console.log(err);

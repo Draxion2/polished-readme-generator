@@ -1,12 +1,22 @@
-# README Generator
+# {Project Title}
 
-  A cool way to code!
+  ## Table of Contents 
+  - [Description](#description)
+  - [Purpose](#purpose)
+  - [Built With](#built-with)
+  - [License](#license)
+  - [Contribution](#contribution)
+  - [Contact Info](#contact-info)
+
+  ## Description
+
+  Project description goes here
 
   ## Purpose
 
-  Provide a user the chance to generate a readme file via user prompts
+  The purpose for the project goes here
 
-  ![alt text](https://i.gyazo.com/1c937e463a5c1e1087ba392cfb289255.png)
+  ![alt text](The screenshot's link goes here)
 
   ## Built With
 
@@ -14,12 +24,13 @@
 
   ## License
 
-  [![license](https://img.shields.io/badge/license--blue)](https://shields.io)
+  [![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
 
   ## Contribution
 
-  Holdan McMullen @ 2022
+  Contributions or credits, if any, for the project goes here
 
   ## Contact Info:
-  - Github: [draxion2](https://github.com/draxion2)
   
+  - Github: [draxion2](https://github.com/draxion2)
+  - Email: holdanmcmullen@gmail.com

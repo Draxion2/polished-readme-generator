@@ -16,7 +16,13 @@ function generateMarkdown(data) {
   // generate readme
   return `# ${data.title}
 
-  // table of contents will go here!
+  ## Table of Contents 
+  - [Description](#description)
+  - [Purpose](#purpose)
+  - [Built With](#built-with)
+  - [License](#license)
+  - [Contribution](#contribution)
+  - [Contact Info](#contact-info)
 
   ## Description
 
