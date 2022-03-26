@@ -23,11 +23,27 @@ const promptQuestions = () => {
             }
         },
 
-        // email
+        // confirm email
+        {
+            type: "confirm",
+            name: "confirmEmail",
+            message: "Would you like to provide your email?",
+            default: true
+        },
+
+        // active when confirmEmail returns true
         {
             type: "input",
             name: "email",
-            message: "Would you like to provide your email?"
+            message: "Please provde your email",
+            when: ({confirmEmail}) => {
+                if (confirmEmail)     {
+                    return true;
+                } else {
+                    console.log("Please provide your email!");
+                    return false;
+                }
+            }
         },
 
         // project name
