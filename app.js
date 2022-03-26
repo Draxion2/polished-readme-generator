@@ -7,10 +7,34 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const promptQuestions = () => {
     return inquirer
         .prompt([
+
+        // github username
+        {
+            type: "input",
+            name: "username",
+            message: "Please enter your Github username (Required)",
+            validate: usernameInput => {
+                if (usernameInput) {
+                    return true;
+                } else {
+                    console.log("Please enter your Github username!");
+                    return false;
+                }
+            }
+        },
+
+        // email
+        {
+            type: "input",
+            name: "email",
+            message: "Would you like to provide your email?"
+        },
+
+        // project name
         {
             type: "input",
             name: "title",
-            message: "What is the title of your project? (Required)?",
+            message: "What is the title of your project? (Required)",
             validate: titleInput => {
                 if (titleInput) {
                     return true;
@@ -20,6 +44,8 @@ const promptQuestions = () => {
                 }
             }
         },
+
+        // description
         {
             type: "input",
             name: "description",
@@ -33,6 +59,8 @@ const promptQuestions = () => {
                 }
             }
         },
+
+        // purpose
         {
             type: "input",
             name: "purpose",
@@ -46,18 +74,24 @@ const promptQuestions = () => {
                 }
             }
         },
+
+        // programming languages
         {
             type: "checkbox",
             name: "languages",
-            message: "What did you build this project with? (Check all that apply)",
+            message: "What did you use to build this project? (Check all that apply)",
             choices: ["HTML", "CSS", "JavaScript", "JQuery", "Bootstrap", "ES6", "Node.js"]
         },
+
+        // confirm screenshot
         {
             type: "confirm",
             name: "confirmScreenshot",
             message: "Would you like to provide a link to a screenshot?",
             default: true
         },
+
+        // active when confirmScreenshot returns true
         {
             type: "link",
             name: "screenshot",
@@ -66,16 +100,29 @@ const promptQuestions = () => {
                 if (confirmScreenshot) {
                     return true;
                 } else {
+                    console.log("Please provide a link to your screenshot!");
                     return false;
                 }
             }
         },
+
+        // license
         {
-            type: "input",
+            type: "checkbox",
             name: "license",
-            message: "Does your project have a license?",
-            default: true
+            message: "Please choose a license for this project (Required)",
+            choices: ["AFL", "Apache", "BSL", "CC", "ECL", "GPL", "MIT", "MS", "OLS", "None"],
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                } else {
+                    console.log("Please choose a valid license!");
+                    return false;
+                }
+            }
         },
+
+        // contributions
         {
             type: "input",
             name: "contributions",
@@ -88,7 +135,7 @@ const promptQuestions = () => {
                     return false;
                 }
             }
-        }
+        },
     ]);
 }
 
@@ -104,10 +151,9 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     promptQuestions()
-    .then(function(data) {
+    .then(data => {
         console.log(data);
-        const newReadme = generateMarkdown(data);
-        writeToFile("DEMOREADME.md", newReadme);
+        writeToFile("DEMOREADME.md", generateMarkdown(data));
     })
     .catch(err => {
         console.log(err);
