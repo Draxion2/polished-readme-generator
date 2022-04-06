@@ -1,4 +1,4 @@
-# Polished README Generator
+# Polished REAMDE Generator
 
   ## Table of Contents 
   - [Description](#description)
@@ -10,11 +10,11 @@
 
   ## Description
 
-  This project provides a user a chance to develop a README file via user prompts
+  It is a node application that allows a user to answer prompted questions about their own applications and then generates into a professional README file
 
   ## Purpose
 
-  Provides a user the opportunity to create a README file by answering questions regarding their own application repositories
+  To create a README file after a user submits user prompts
 
   
 
@@ -24,13 +24,13 @@
 
   ## License
 
-  [![license](https://img.shields.io/badge/license-MIT-blue)](https://shields.io)
+  [![license](https://img.shields.io/badge/license--blue)](https://shields.io)
 
   ## Contribution
 
-  Holdan McMullen @2022
+  @ Holdan 2022
 
   ## Contact Info:
   
-  - Github: [draxion2](https://github.com/draxion2)
-  - Email: holdanmcmullen@gmail.com
+  - Github: [Draxion2](https://github.com/Draxion2)
+  - Email: holdan@gmail.com

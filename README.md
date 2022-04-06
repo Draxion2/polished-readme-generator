@@ -29,13 +29,9 @@ This app uses the command line and node.js to function properly.
 
 __Visual Instruction__
 
-This video demostrates the code needed for the application to run propertly.
+This video demostrates how this application works.
 
-![alt text](./src/code-presentation.gif)
-
-This video demostrates the application running and the user answering question prompts in order for the application to generate the README file.
-
-![alt text](./src/command-line-presentation.gif)
+https://drive.google.com/file/d/1x8ehKYwVs5cbSsjGdTdH6FUJag8pCIva/view
 
 ## Built With
 
