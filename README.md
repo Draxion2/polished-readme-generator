@@ -31,7 +31,7 @@ __Visual Instruction__
 
 This video demostrates how this application works.
 
-[Walkthrough Video](https://drive.google.com/file/d/1x8ehKYwVs5cbSsjGdTdH6FUJag8pCIva/view)
+[Walkthrough Video](https://drive.google.com/file/d/1bawiqGW8f3VmwpfH0hT1oHLjWYjgp3sX/view?usp=sharing)
 
 ## Built With
 
